@@ -20,7 +20,6 @@ app.get('/notes', (req, res) => { res.sendFile(path.join(__dirname + '/public/no
 app.get('/api/notes', (req, res) => {
     res.json(noteArr);
 });
-
 // first read the db.json file 
 app.post('/api/notes', function (req, res) {
     const newNote = {
@@ -45,3 +44,4 @@ app.delete("/api/notes/:id", function(req, res){
 });
 app.listen(PORT, () => console.log(`Server Started on PORT ${PORT}`));
 
+//lkj
