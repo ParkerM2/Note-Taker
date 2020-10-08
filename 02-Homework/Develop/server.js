@@ -2,16 +2,21 @@ const express = require('express');
 const path = require('path');
 const app = express();
 const PORT = process.env.PORT || 5000;
-// app.get('/', (req, res) => {
-//     res.sendFile(path.join(__dirname, 'public', '.\public\assets\js\index.js'))
-// });
+const fs = require('fs');
+const logger = require('./public/assets/js/logger')
+app.use(logger);
 
+// middleware
 app.use(express.static(path.join(__dirname, 'public')))
+app.use(express.json());
 
 
-// route
-app.get('/api/notes', (req, res) => {
-    res.json(notes)
+
+// route for GET Notes
+app.get('/notes', (req, res) => {
+    console.log(res);
+    res.sendFile(path.join(__dirname + '/public', 'notes.html'))
+    // res.json(notes)
 });
 
 
