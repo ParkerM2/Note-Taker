@@ -8,11 +8,11 @@ const noteArr = require('./02-Homework/Develop/db/db.json')
 
 // middleware
 app.use(express.urlencoded({ extended: true }));
-app.use(express.static(path.join(__dirname + './02-Homework/public/index.html')));
+app.use(express.static(path.join(__dirname + '/public' ,'index.html')));
 app.use(express.json());
 // app.use(logger);
 // route for index file..
-app.get('*', (req, res) => { res.sendFile(path.join(__dirname + './02-Homework/develop/public/index.html')) }); // <- the index.js file throws a jquery error for the method forEach() when this is active
+// app.get('*', (req, res) => { res.sendFile(path.join(__dirname + './02-Homework/develop/public/index.html')) }); // <- the index.js file throws a jquery error for the method forEach() when this is active
 // route for GET Notes
 app.get('/notes', (req, res) => { res.sendFile(path.join(__dirname + './02-Homework/public/notes.html')) });
 
