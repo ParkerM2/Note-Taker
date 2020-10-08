@@ -2,9 +2,9 @@ const express = require('express');
 const path = require('path');
 const app = express();
 const PORT = process.env.PORT || 3001;
-const logger = require('./Develop/public/assets/js/logger');
+// const logger = require('./public/assets/js/logger.js');
 const uuid = require('uuid')
-const noteArr = require('./Develop/db/db.json');
+const noteArr = require('./02-Homework/Develop/db/db.json');
 const { dirname } = require('path');
 
 // middleware
