@@ -9,7 +9,7 @@ let noteArr = [];
 
 // middleware
 app.use(express.urlencoded({ extended: true }));
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname + 'public', 'index.html')));
 app.use(express.json());
 // app.use(logger);
 // route for index file..
