@@ -1,7 +1,7 @@
 const express = require('express');
 const path = require('path');
 const app = express();
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 3001;
 const logger = require('./02-Homework/Develop/public/assets/js/logger');
 const uuid = require('uuid')
 const noteArr = require('./02-Homework/Develop/db/db.json');
@@ -9,9 +9,11 @@ const { dirname } = require('path');
 
 // middleware
 app.use(express.urlencoded({ extended: true }));
-app.use(express.static(path.join(__dirname + '/public' ,'index.html')));
+// app.use(express.static(path.join(__dirname + '/public' ,'index.html')));
 app.use(express.json());
-app.get('/', (req,res) =>{res.sendFile(path.join(path + '/02-Homework/Develop/public/index.html'))})
+app.get("/", function(req, res) {
+    res.json(path.join(__dirname, "public/index.html"));
+});
 // app.use(logger);
 // route for index file..
 // app.get('*', (req, res) => { res.sendFile(path.join(__dirname + './02-Homework/develop/public/index.html')) }); // <- the index.js file throws a jquery error for the method forEach() when this is active
@@ -44,6 +46,6 @@ app.delete("/api/notes/:id", function(req, res){
         };
     };
 });
-app.listen(PORT, () => console.log(`Server Started on PORT ${PORT}`));
+app.listen(PORT, function() {console.log(`Server Started on PORT ${PORT}`)});
 
 //lkj
