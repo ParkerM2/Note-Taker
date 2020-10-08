@@ -2,19 +2,21 @@ const express = require('express');
 const path = require('path');
 const app = express();
 const PORT = process.env.PORT || 5000;
-const fs = require('fs');
 const logger = require('./public/assets/js/logger');
 const { response, json } = require('express');
-const { isBuffer } = require('util');
 const uuid = require('uuid')
 let noteArr = [];
+
 // middleware
-// app.use(logger);
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.json());
+// app.use(logger);
+// route for index file..
+// app.get('*', (req, res) => { res.sendFile(path.join(__dirname + '/public', 'index.html')) }); // <- the index.js file throws a jquery error for the method forEach() when this is active
 // route for GET Notes
-app.get('/notes', (req, res) => {res.sendFile(path.join(__dirname + '/public', 'notes.html'))});
+app.get('/notes', (req, res) => { res.sendFile(path.join(__dirname + '/public', 'notes.html')) });
+
 // GETS Notes from db.JSON
 app.get('/api/notes', (req, res) => {
     res.json(noteArr);
@@ -34,11 +36,11 @@ app.post('/api/notes', function (req, res) {
 
 // deleting a note
 app.delete("/api/notes/:id", function(req, res){
-    let noteId = req.params.id;
-    for (let i = 0; i < notesArr.length; i++){
-        if (noteId === notesArr[i].id){
-            notesArr.splice(i, 1);
-            res.json(notesArr);
+    let id = req.params.id;
+    for (let i = 0; i < noteArr.length; i++){
+        if (id === noteArr[i].id){
+            noteArr.splice(i, 1);
+            res.json(noteArr);
         };
     };
 });
