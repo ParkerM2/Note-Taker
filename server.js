@@ -4,8 +4,7 @@ const app = express();
 const PORT = process.env.PORT || 3001;
 // const logger = require('./public/assets/js/logger.js');
 const uuid = require('uuid')
-const noteArr = require('./02-Homework/Develop/db/db.json');
-const { dirname } = require('path');
+const noteArr = require('db/db.json');
 
 // middleware
 app.use(express.urlencoded({ extended: true }));
