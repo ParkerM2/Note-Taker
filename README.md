@@ -9,7 +9,7 @@
 > App to take down notes and save them.
 
 ### ✨ [Demo](https://github.com/ParkerM2/Note-Taker/blob/main/public/assets/images/website-functionality-video.gif)
-
+<img alt="gif" src="https://github.com/ParkerM2/Note-Taker/blob/main/public/assets/images/website-functionality-video.gif">
 ## Install
 
 ```sh
@@ -27,7 +27,7 @@ npm run start
 👤 **Parker Manning**
 
 * Website: https://parkerm2.github.io/Portfolio
-* Github: [@ParkerM2   ](https://github.com/ParkerM2)
+* Github: [@ParkerM2](https://github.com/ParkerM2)
 
 ## Show your support
 
