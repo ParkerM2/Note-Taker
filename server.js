@@ -12,7 +12,7 @@ app.use(express.urlencoded({ extended: true }));
 // app.use(express.static(path.join(__dirname + '/public' ,'index.html')));
 app.use(express.json());
 app.get("/", function(req, res) {
-    res.json(path.join(__dirname, "public/index.html"));
+    res.json(path.join(__dirname, "02-Homework/Develop/public/index.html"));
 });
 // app.use(logger);
 // route for index file..
