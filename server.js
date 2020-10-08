@@ -4,17 +4,19 @@ const app = express();
 const PORT = process.env.PORT || 5000;
 const logger = require('./02-Homework/Develop/public/assets/js/logger');
 const uuid = require('uuid')
-const noteArr = require('./02-Homework/Develop/db/db.json')
+const noteArr = require('./02-Homework/Develop/db/db.json');
+const { dirname } = require('path');
 
 // middleware
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname + '/public' ,'index.html')));
 app.use(express.json());
+app.get('/', (req,res) =>{res.sendFile(path.join(path + '/02-Homework/Develop/public/index.html'))})
 // app.use(logger);
 // route for index file..
 // app.get('*', (req, res) => { res.sendFile(path.join(__dirname + './02-Homework/develop/public/index.html')) }); // <- the index.js file throws a jquery error for the method forEach() when this is active
 // route for GET Notes
-app.get('/notes', (req, res) => { res.sendFile(path.join(__dirname + './02-Homework/public/notes.html')) });
+app.get('/notes', (req, res) => { res.sendFile(path.join(__dirname + './02-Homework/Develop/public/notes.html')) });
 
 // GETS Notes from db.JSON
 app.get('/api/notes', (req, res) => {
