@@ -13,7 +13,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.json());
 // app.use(logger);
 // route for index file..
-// app.get('*', (req, res) => { res.sendFile(path.join(__dirname + '/public', 'index.html')) }); // <- the index.js file throws a jquery error for the method forEach() when this is active
+ app.get('*', (req, res) => { res.sendFile(path.join(__dirname + '/public', 'index.html')) }); // <- the index.js file throws a jquery error for the method forEach() when this is active
 // route for GET Notes
 app.get('/notes', (req, res) => { res.sendFile(path.join(__dirname + '/public', 'notes.html')) });
 
